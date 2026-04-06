@@ -44,7 +44,7 @@ contract HelperConfig is Script {
         vm.startBroadcast();
         MockV3Aggregator mockPriceFeed = new MockV3Aggregator(
             DECIMALS,
-            INITIAL_PRICE
+            int256(INITIAL_PRICE) // Explicitly cast to int256
         );
         vm.stopBroadcast();
 
